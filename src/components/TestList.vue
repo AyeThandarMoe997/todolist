@@ -40,6 +40,9 @@
           <ItemList v-for="(task, index) in tasks"
                      @remove="removeTask(index)"
                      @complete="completeTask(task)"
+                     @dragover="(e) => onDragOver(item, index, e)" 
+                     @dragend="(e) => finishDrag(item, i, e)"
+                     @dragstart="(e) => startDrag(item, i, e)"
                      :task="task"
                      :key="task"
           />
